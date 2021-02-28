@@ -10,6 +10,10 @@ import { BlogComponent } from './blog/blog.component';
 import { PostComponent } from './post/post.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PostCardComponent } from './post-card/post-card.component';
+import { SearchWidgetComponent } from './search-widget/search-widget.component';
+import { LatestPostsComponent } from './latest-posts/latest-posts.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { TagsComponent } from './tags/tags.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { PostCardComponent } from './post-card/post-card.component';
     BlogComponent,
     PostComponent,
     PageNotFoundComponent,
-    PostCardComponent
+    PostCardComponent,
+    SearchWidgetComponent,
+    LatestPostsComponent,
+    CategoriesComponent,
+    TagsComponent
   ],
   imports: [
     BrowserModule,
