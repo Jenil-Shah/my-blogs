@@ -2,10 +2,10 @@
   <div class="post-thumbnail"><img [src]="post.featuredImage" alt="..." class="img-fluid"></div>
   <div class="post-details">
     <div class="post-meta d-flex justify-content-between">
-      <div class="category"><a href="#">{{post.category}}</a></div>
+      <div class="category"><a routerLink>{{post.category}}</a></div>
     </div>
-    <h1>{{post.title}}<a href="#"><i class="fa fa-bookmark-o"></i></a></h1>
-    <div class="post-footer d-flex align-items-center flex-column flex-sm-row"><a href="#" class="author d-flex align-items-center flex-wrap">
+    <h1>{{post.title}}<a routerLink><i class="fa fa-bookmark-o"></i></a></h1>
+    <div class="post-footer d-flex align-items-center flex-column flex-sm-row"><a routerLink class="author d-flex align-items-center flex-wrap">
         <div class="avatar"><img src="/assets/img/user.svg" alt="..." class="img-fluid"></div>
         <div class="title"><span>{{post.postedBy}}</span></div></a>
       <div class="d-flex align-items-center flex-wrap">
@@ -17,7 +17,7 @@
     <div class="post-body">
       <p>{{post.post}}</p>
     </div>
-    <div class="post-tags"><a href="#" class="tag" *ngFor="let tag of post.tags">{{tag}}</a></div>
+    <div class="post-tags"><a routerLink class="tag" *ngFor="let tag of post.tags">{{tag}}</a></div>
     <div class="post-comments">
       <header>
         <h3 class="h6">Post Comments<span class="no-of-comments">({{post.comments.length}})</span></h3>
