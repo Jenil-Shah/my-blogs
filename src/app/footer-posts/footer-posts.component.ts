@@ -1,14 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import {BlogPost} from '../BlogPost';
 import {PostService} from '../post.service';
 
 @Component({
-  selector: 'app-latest-posts',
-  templateUrl: './latest-posts.component.html',
-  styleUrls: ['./latest-posts.component.css']
+  selector: 'app-footer-posts',
+  templateUrl: './footer-posts.component.html',
+  styleUrls: ['./footer-posts.component.css']
 })
-export class LatestPostsComponent implements OnInit {
+export class FooterPostsComponent implements OnInit {
 
   posts: Array<BlogPost>;
 

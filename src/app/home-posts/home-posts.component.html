@@ -1,0 +1,22 @@
+<!-- Post -->
+<div class="row d-flex align-items-stretch" *ngFor="let post of posts">
+  <div class="text col-lg-7">
+    <div class="text-inner d-flex align-items-center">
+      <div class="content">
+        <header class="post-header">
+          <div class="category"><a [routerLink]="['/blog']" [queryParams]="{category: post.category}">{{post.category}}</a>
+          </div><a [routerLink]="['/post', post._id]">
+            <h2 class="h4">{{post.title}}</h2></a>
+        </header>
+        <p>{{post.post}}</p>
+        <footer class="post-footer d-flex align-items-center"><a routerLink class="author d-flex align-items-center flex-wrap">
+            <div class="avatar"><img src="/assets/img/user.svg" alt="..." class="img-fluid"></div>
+            <div class="title"><span>{{post.postedBy}}</span></div></a>
+          <div class="date"><i class="icon-clock"></i>{{post.postDate | date: 'mediumDate'}}</div>
+          <div class="comments"><i class="icon-comment"></i>{{post.comments.length}}</div>
+        </footer>
+      </div>
+    </div>
+  </div>
+  <div class="post-thumbnail col-lg-5"><img [src]="post.featuredImage" alt="..." class="img-fluid"></div>
+</div>

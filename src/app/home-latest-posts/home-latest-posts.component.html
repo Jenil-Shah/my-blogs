@@ -1,0 +1,20 @@
+<section class="latest-posts">
+  <div class="container">
+    <header>
+      <h2>Latest from the blog</h2>
+      <p class="text-big">Presenting lastest posts from the collection.</p>
+    </header>
+    <div class="row">
+      <div class="post col-md-4" *ngFor="let post of posts">
+        <div class="post-thumbnail"><a [routerLink]="['/post', post._id]"><img [src]="post.featuredImage" alt="..." class="img-fluid"></a></div>
+        <div class="post-details">
+          <div class="post-meta d-flex justify-content-between">
+            <div class="date">{{post.postDate | date: 'mediumDate'}}</div>
+            <div class="category"><a [routerLink]="['/blog']" [queryParams]="{category: post.category}">{{post.category}}</a></div>
+          </div><a [routerLink]="['/post', post._id]">
+            <h3 class="h4">{{post.title}}</h3></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

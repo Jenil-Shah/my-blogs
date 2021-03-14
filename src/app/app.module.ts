@@ -16,6 +16,10 @@ import { LatestPostsComponent } from './latest-posts/latest-posts.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { TagsComponent } from './tags/tags.component';
 import { PostDataComponent } from './post-data/post-data.component';
+import { PagingComponent } from './paging/paging.component';
+import { FooterPostsComponent } from './footer-posts/footer-posts.component';
+import { HomePostsComponent } from './home-posts/home-posts.component';
+import { HomeLatestPostsComponent } from './home-latest-posts/home-latest-posts.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { PostDataComponent } from './post-data/post-data.component';
     LatestPostsComponent,
     CategoriesComponent,
     TagsComponent,
-    PostDataComponent
+    PostDataComponent,
+    PagingComponent,
+    FooterPostsComponent,
+    HomePostsComponent,
+    HomeLatestPostsComponent
   ],
   imports: [
     BrowserModule,

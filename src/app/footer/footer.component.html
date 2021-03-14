@@ -32,14 +32,7 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="latest-posts" *ngFor="let post of posts">
-          <a routerLink>
-            <div class="post d-flex align-items-center">
-              <div class="image"><img [src]="post.featuredImage" alt="..." class="img-fluid"></div>
-              <div class="title"><strong>{{post.title}}</strong><span class="date last-meta">{{post.postDate}}</span></div>
-            </div>
-          </a>
-        </div>
+        <app-footer-posts></app-footer-posts>
       </div>
     </div>
   </div>
