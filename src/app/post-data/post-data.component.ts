@@ -13,18 +13,38 @@ export class PostDataComponent implements OnInit, OnDestroy {
 
   post: BlogPost;
 
+  commentName: string;
+  commentText: string;
+
   querySub: any;
 
   constructor(private data: PostService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.querySub = this.route.params.subscribe(params => {
-      this.data.getPostById(params['id']).subscribe(data => this.post = data);
+      this.data.getPostById(params['id']).subscribe(data => {
+        this.post = data;
+        this.post.views++;
+        this.data.updatePostById(this.post._id, this.post).subscribe();
+      });
+    });
+  }
+
+  submitComment()
+  {
+    this.post.comments.push({
+      author: this.commentName,
+      comment: this.commentText,
+      date: new Date().toLocaleDateString()
+    });
+
+    this.data.updatePostById(this.post._id, this.post).subscribe(() => {
+      this.commentName = '';
+      this.commentText = '';
     });
   }
 
   ngOnDestroy(): void{
     if(this.querySub) this.querySub.unsubscribe();
   }
-
 }
