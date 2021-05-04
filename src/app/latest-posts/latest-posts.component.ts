@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 
 import {BlogPost} from '../BlogPost';
 import {PostService} from '../post.service';
@@ -8,7 +8,7 @@ import {PostService} from '../post.service';
   templateUrl: './latest-posts.component.html',
   styleUrls: ['./latest-posts.component.css']
 })
-export class LatestPostsComponent implements OnInit {
+export class LatestPostsComponent implements OnInit, OnDestroy {
 
   posts: Array<BlogPost>;
 
@@ -18,6 +18,11 @@ export class LatestPostsComponent implements OnInit {
 
   ngOnInit(): void {
     this.sub = this.data.getPosts(1, null, null).subscribe(data => this.posts = data.slice(0, 3));
+  }
+
+  ngOnDestroy(): void
+  {
+    if(this.sub) this.sub.unsubscribe();
   }
 
 }
